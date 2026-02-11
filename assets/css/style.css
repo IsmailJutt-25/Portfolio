@@ -724,110 +724,82 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Contact Section */
-    .contact {
-      padding: 100px 10%;
-    }
+    /* Form */
+.contact-form {
+  display: grid;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
 
-    .contact-container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 24px;
-      padding: 60px;
-      position: relative;
-      overflow: hidden;
-    }
+.form-group {
+  position: relative;
+}
 
-    .contact-container::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, var(--main-glow) 0%, transparent 70%);
-      opacity: 0.5;
-      pointer-events: none;
-    }
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 14px;
+  transition: all 0.3s;
+  font-family: inherit;
+}
 
-    .contact-form {
-      display: grid;
-      gap: 20px;
-      position: relative;
-      z-index: 1;
-    }
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
 
-    .form-group {
-      position: relative;
-    }
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--main);
+  box-shadow: 0 0 0 3px var(--main-glow);
+}
 
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 16px 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      color: var(--text);
-      font-size: 14px;
-      transition: all 0.3s;
-      font-family: inherit;
-    }
+.form-group label {
+  position: absolute;
+  left: 20px;
+  top: 16px;
+  color: var(--text-muted);
+  font-size: 14px;
+  transition: all 0.3s;
+  pointer-events: none;
+}
 
-    .form-group textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 12px;
+  font-size: 12px;
+  color: var(--main);
+  background: var(--card);
+  padding: 0 8px;
+}
 
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--main);
-      box-shadow: 0 0 0 3px var(--main-glow);
-    }
+/* Button */
+.submit-btn {
+  padding: 16px 32px;
+  background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 
-    .form-group label {
-      position: absolute;
-      left: 20px;
-      top: 16px;
-      color: var(--text-muted);
-      font-size: 14px;
-      transition: all 0.3s;
-      pointer-events: none;
-    }
-
-    .form-group input:focus + label,
-    .form-group input:not(:placeholder-shown) + label,
-    .form-group textarea:focus + label,
-    .form-group textarea:not(:placeholder-shown) + label {
-      top: -10px;
-      left: 12px;
-      font-size: 12px;
-      color: var(--main);
-      background: var(--card);
-      padding: 0 8px;
-    }
-
-    .submit-btn {
-      padding: 16px 32px;
-      background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
-      border: none;
-      border-radius: 12px;
-      color: white;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px var(--main-glow);
-    }
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--main-glow);
+}
 
     /* Footer */
     footer {
@@ -986,4 +958,5 @@
       section {
         padding: 60px 5%;
       }
+
     }
