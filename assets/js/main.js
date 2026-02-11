@@ -72,4 +72,14 @@
       }
       
       lastScroll = currentScroll;
+
     });
+
+function openContact() {
+  document.getElementById("contact").classList.add("active");
+}
+
+function closeContact() {
+  document.getElementById("contact").classList.remove("active");
+}
+
